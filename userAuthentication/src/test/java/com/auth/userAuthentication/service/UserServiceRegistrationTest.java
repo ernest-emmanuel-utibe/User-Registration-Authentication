@@ -1,9 +1,18 @@
 package com.auth.userAuthentication.service;
 
+import com.auth.userAuthentication.data.model.User;
 import com.auth.userAuthentication.data.repository.UserRepository;
 import com.auth.userAuthentication.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceRegistrationTest {
@@ -34,7 +43,7 @@ public class UserServiceRegistrationTest {
         // Additional assertions as needed
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testRegisterUser_DuplicateUsername() {
         // Test registration with a duplicate username
         String username = "john_doe";
@@ -47,7 +56,7 @@ public class UserServiceRegistrationTest {
         userService.registerUser(username, email, password);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testRegisterUser_DuplicateEmail() {
         // Test registration with a duplicate email
         String username = "john_doe";

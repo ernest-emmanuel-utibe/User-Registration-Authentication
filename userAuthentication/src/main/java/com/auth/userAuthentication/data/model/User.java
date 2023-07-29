@@ -3,6 +3,8 @@ package com.auth.userAuthentication.data.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 
 @Data
 @Builder
@@ -24,5 +26,16 @@ public class User {
     private String password;
 
     public User(String johnDoe, String mail, String oldPassword) {
+    }
+
+    @Column(nullable = false)
+    private Date updatedAt; // This field will store the timestamp when the user's information was last updated.
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

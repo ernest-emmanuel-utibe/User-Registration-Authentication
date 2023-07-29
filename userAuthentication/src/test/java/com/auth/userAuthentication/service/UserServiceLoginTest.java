@@ -1,9 +1,19 @@
 package com.auth.userAuthentication.service;
 
+import com.auth.userAuthentication.data.model.User;
+import com.auth.userAuthentication.data.repository.UserRepository;
+import com.auth.userAuthentication.service.impl.UserServiceImpl;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.skyscreamer.jsonassert.JSONAssert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class UserServiceLoginTest {
     @InjectMocks
     private UserServiceImpl userService;
@@ -23,7 +33,7 @@ public class UserServiceLoginTest {
         when(userRepository.findByUsername(usernameOrEmail)).thenReturn(user);
         when(userRepository.findByEmail(usernameOrEmail)).thenReturn(null);
 
-        User loggedInUser = userService.loginUser(usernameOrEmail, password);
+        User loggedInUser = userService.login(usernameOrEmail, password);
 
         assertNotNull(loggedInUser);
         assertEquals(usernameOrEmail, loggedInUser.getUsername());
@@ -41,7 +51,7 @@ public class UserServiceLoginTest {
 
         when(userRepository.findByUsername(usernameOrEmail)).thenReturn(user);
 
-        userService.loginUser(usernameOrEmail, password);
+        userService.login(usernameOrEmail, password);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -53,6 +63,6 @@ public class UserServiceLoginTest {
         when(userRepository.findByUsername(usernameOrEmail)).thenReturn(null);
         when(userRepository.findByEmail(usernameOrEmail)).thenReturn(null);
 
-        userService.loginUser(usernameOrEmail, password);
+        userService.login(usernameOrEmail, password);
     }
 }

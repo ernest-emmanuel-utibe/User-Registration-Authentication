@@ -37,7 +37,7 @@ public class UserServiceAccountManagementTest {
         existingUser.setId(userId);
 
         // Mock the behavior of userRepository.findById(userId)
-        when(userRepository.findById(Math.toIntExact(userId))).thenReturn(Optional.of(existingUser));
+        when(userRepository.findById(userId)).thenReturn(Optional.of(existingUser));
 
         // Mock the behavior of userRepository.save(user)
         // In this example, we assume that the userRepository returns the same user after saving it
@@ -61,17 +61,17 @@ public class UserServiceAccountManagementTest {
         // Additional assertions to check if the user information has been properly updated
         // For example, if you have an 'updatedAt' field in the User entity, you can check:
         assertNotNull(updatedUser.getUpdatedAt());
+    }
 
-        @Test
-        public void testUpdateUser_UserNotFound() {
-            // Test update with a non-existing user
-            Long userId = 1L;
-            String newEmail = "new_email@example.com";
-            String newPassword = "newPassword";
+    @Test
+    public void testUpdateUser_UserNotFound() {
+        // Test update with a non-existing user
+        Long userId = 1L;
+        String newEmail = "new_email@example.com";
+        String newPassword = "newPassword";
 
-            when(userRepository.findById(userId)).thenReturn(Optional.empty());
+        when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-            userService.updateUser(userId, newEmail, newPassword);
-        }
+        userService.updateUser(userId, newEmail, newPassword);
     }
 }
