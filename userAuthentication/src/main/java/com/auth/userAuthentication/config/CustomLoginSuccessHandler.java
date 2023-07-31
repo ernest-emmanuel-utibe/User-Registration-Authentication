@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.config;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import com.auth.userAuthentication.data.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

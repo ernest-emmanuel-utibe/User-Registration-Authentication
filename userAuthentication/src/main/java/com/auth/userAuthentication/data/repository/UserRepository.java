@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.data.repository;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import com.auth.userAuthentication.data.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

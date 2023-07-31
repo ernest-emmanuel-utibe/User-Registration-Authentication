@@ -1,5 +1,9 @@
 package com.auth.userAuthentication;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

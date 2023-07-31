@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.controller;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import com.auth.userAuthentication.data.dto.request.LoginRequest;
 import com.auth.userAuthentication.data.dto.request.PasswordResetRequest;
 import com.auth.userAuthentication.data.dto.request.UpdateUserRequest;

@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.data.model;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import jakarta.persistence.*;
 import lombok.*;
 

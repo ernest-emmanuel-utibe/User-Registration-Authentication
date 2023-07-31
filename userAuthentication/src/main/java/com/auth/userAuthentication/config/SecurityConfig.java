@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.config;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import com.auth.userAuthentication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

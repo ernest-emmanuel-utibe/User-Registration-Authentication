@@ -1,5 +1,9 @@
 package com.auth.userAuthentication.service.impl;
 
+/**
+ * @author Ernest Emmanuel Utibe
+ **/
+
 import com.auth.userAuthentication.data.model.User;
 import com.auth.userAuthentication.data.repository.UserRepository;
 import com.auth.userAuthentication.service.UserService;
