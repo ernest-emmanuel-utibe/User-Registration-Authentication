@@ -2,13 +2,13 @@
 Welcome to the User Registration and Authentication System project! This project aims to provide a user registration and authentication system with account management functionalities, built using Spring Boot and a relational database.
 
 ## Table of Contents
-Description
+    Description
 
-Dependencies
+    Dependencies
 
-How to Run
+    How to Run
 
-API Documentation
+    API Documentation
 
 ## Description
 
@@ -39,19 +39,19 @@ Logging and Monitoring: The system logs and monitors activities to detect anomal
 ## Dependencies
 The project utilizes the following dependencies:
 
-Spring Boot Web: For creating RESTful APIs and handling HTTP requests.
+    Spring Boot Web: For creating RESTful APIs and handling HTTP requests.
 
-Spring Boot Data JPA: For database integration and data access.
+    Spring Boot Data JPA: For database integration and data access.
 
-Spring Boot Security: For user authentication and security features.
+    Spring Boot Security: For user authentication and security features.
 
-Hibernate Validator: For data validation and constraint checking.
+    Hibernate Validator: For data validation and constraint checking.
 
-BCrypt: For password hashing and salting.
+    BCrypt: For password hashing and salting.
 
-JavaMail API (Optional): For sending emails during account verification and password reset.
+    JavaMail API (Optional): For sending emails during account verification and password reset.
 
-OAuth Library (Optional): For integrating with third-party authentication providers.
+    OAuth Library (Optional): For integrating with third-party authentication providers.
 
 ## How to Run
 Prerequisites:

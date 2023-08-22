@@ -5,6 +5,8 @@ package com.auth.userAuthentication.data.model;
  **/
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 import java.util.Date;
@@ -24,10 +26,15 @@ public class User {
     private String username;
 
     @Column(unique = true, nullable = false)
+    @Email(message = "Please provide a valid email address")
     private String email;
 
+
     @Column(nullable = false)
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@#$%^&+=])[A-Za-z\\d@#$%^&+=]{8,}$", message = "Enter a valid password")
     private String password;
+
+    private boolean active;
 
     public User(String johnDoe, String mail, String oldPassword) {
     }
