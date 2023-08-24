@@ -18,8 +18,7 @@ public class SecurityDetailServiceImpl implements SecurityDetailService {
 
     @Override
     public SecurityDetail findSecurityDetailByToken(String token) {
-        return securityDetailRepository.findSecurityDetailsByToken(token)
-                .orElse(null);
+        return securityDetailRepository.findSecurityDetailsByToken(token).orElse(null);
     }
 
     @Override

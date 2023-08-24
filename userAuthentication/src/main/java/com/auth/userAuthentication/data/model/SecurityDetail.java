@@ -2,6 +2,7 @@ package com.auth.userAuthentication.data.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 @Setter
 @Getter
