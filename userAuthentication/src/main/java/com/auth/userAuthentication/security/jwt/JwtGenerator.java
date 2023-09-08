@@ -93,22 +93,6 @@ public class JwtGenerator {
 //    @Value("${JWT_SECRET}")
 //    private String jwtSecret;
 // //Keys.secretKeyFor(SignatureAlgorithm.HS512);
-
-
-
-    //    public String generateToken(String username, Long expiration) {
-//        Date currentDate = new Date();
-//        Date expirationDate = new Date(currentDate.getTime() + expiration);
-//
-//        return Jwts.builder()
-//                .setSubject(username)
-//                .setIssuer("Trust worthy Bank")
-//                .setIssuedAt(currentDate)
-//                .setExpiration(expirationDate)
-//                .signWith(key)
-//                .compact();
-//    }
-//
 //    public String generateToken(
 //            Map<String, Object> extraClaims,
 //            UserDetails userDetails){
