@@ -20,8 +20,7 @@ public class EmailServiceImpl implements EmailService{
     @Value("${spring.mail.username}")
     private String sender;
 
-    // Method 1
-    // To send a simple email
+    // Send a simple email
     public String sendSimpleMail(EmailDetails details) {
 
         // Try block to check for exceptions
@@ -47,8 +46,7 @@ public class EmailServiceImpl implements EmailService{
         }
     }
 
-    // Method 2
-    // To send an email with attachment
+    // Send an email with attachment
     public String sendMailWithAttachment(EmailDetails details) {
         // Creating a mime message
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
