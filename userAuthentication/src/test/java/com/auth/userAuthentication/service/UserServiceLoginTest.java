@@ -37,7 +37,6 @@ public class UserServiceLoginTest {
 
         assertNotNull(loggedInUser);
         assertEquals(usernameOrEmail, loggedInUser.getUsername());
-        // Additional assertions as needed
     }
 
     @Test(expected = IllegalArgumentException.class)
