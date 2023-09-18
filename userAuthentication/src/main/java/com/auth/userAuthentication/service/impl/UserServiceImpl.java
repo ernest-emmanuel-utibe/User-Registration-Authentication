@@ -94,15 +94,6 @@ public class UserServiceImpl implements UserService {
         // Find the user by userId
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found."));
-
-        // Implement account deletion logic
-        // For simplicity, we will assume that deleting a user means setting a flag (e.g., isActive) to false
-        // in the database rather than physically deleting the record.
-
-        // Perform any additional business logic for account deletion, if needed.
-        // For example, you might want to revoke user access tokens, perform cleanup, or take other actions.
-
-        // In this example, we set the isActive flag to false and save the user entity.
         user.setActive(false);
         userRepository.save(user);
     }
