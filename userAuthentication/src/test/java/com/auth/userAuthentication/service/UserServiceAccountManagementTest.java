@@ -40,7 +40,6 @@ public class UserServiceAccountManagementTest {
         when(userRepository.findById(userId)).thenReturn(Optional.of(existingUser));
 
         // Mock the behavior of userRepository.save(user)
-        // In this example, we assume that the userRepository returns the same user after saving it
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         // Call the updateUser method in userService
@@ -59,7 +58,6 @@ public class UserServiceAccountManagementTest {
         assertEquals(hashedNewPassword, updatedUser.getPassword());
 
         // Additional assertions to check if the user information has been properly updated
-        // For example, if you have an 'updatedAt' field in the User entity, you can check:
         assertNotNull(updatedUser.getUpdatedAt());
     }
 
