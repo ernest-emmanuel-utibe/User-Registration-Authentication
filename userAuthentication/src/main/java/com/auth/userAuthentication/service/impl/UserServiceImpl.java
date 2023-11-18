@@ -151,7 +151,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(hashedTemporaryPassword);
         userRepository.save(user);
 
-        // Send the password reset email
+        // Send the password reset email to the user
         sendPasswordResetEmail(email, temporaryPassword);
     }
 
