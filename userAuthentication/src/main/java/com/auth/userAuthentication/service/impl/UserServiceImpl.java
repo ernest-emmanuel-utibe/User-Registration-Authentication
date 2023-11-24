@@ -172,11 +172,11 @@ public class UserServiceImpl implements UserService {
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
         try {
-            // Set the email properties
+            // Set the email properties.
             helper.setTo(email);
             helper.setSubject("Password Reset");
 
-            // Compose the email body
+            // Compose the email body.
             String emailBody = "Dear User,\n\n"
                     + "You have requested a password reset. Your temporary password is: " + temporaryPassword + "\n"
                     + "Please use this temporary password to log in and reset your password.\n\n"
@@ -187,7 +187,7 @@ public class UserServiceImpl implements UserService {
             // Set the sender of the email
             helper.setFrom(mailSenderAddress);
 
-            // Send the email
+            // Send the email.
             mailSender.send(message);
         } catch (MessagingException e) {
             // Handle email sending errors
