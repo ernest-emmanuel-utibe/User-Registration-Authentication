@@ -34,7 +34,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerUser(String username, String email, String password) {
-        // Perform validation for unique username and email.
+        
+        // Perform validation for unique username and email
         if (userRepository.findByUsername(username) != null) {
             throw new IllegalArgumentException("Username already exists.");
         }
@@ -43,12 +44,12 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("Email address already exists.");
         }
 
-        // Perform additional validation for username, email, and password format.
+        // Perform additional validation for username, email, and password format
         if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("Username cannot be empty.");
         }
 
-        // Validate email format using a simple regular expression.
+        // Validate email format using a simple regular expression
         if (!isValidEmail(email)) {
             throw new IllegalArgumentException("Invalid email format.");
         }
@@ -57,10 +58,10 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("Password must be at least 8 characters long.");
         }
 
-        // Hash the user's password.
+        // Hash the user's password
         String hashedPassword = hashPassword(password);
 
-        // Create the new user entity and save it to the database.
+        // Create the new user entity and save it to the database
         User user = new User();
         user.setUsername(username);
         user.setEmail(email);
