@@ -152,12 +152,13 @@ public class UserServiceImpl implements UserService {
         user.setPassword(hashedTemporaryPassword);
         userRepository.save(user);
 
-        // Send the password reset email to the user
+        // Send the password reset email to the user.
         sendPasswordResetEmail(email, temporaryPassword);
     }
 
     private String generateRandomPassword() {
-        // Generate a random alphanumeric password with a length of 10 characters
+        
+        // Generate a random alphanumeric password with a length of 10 characters.
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         StringBuilder sb = new StringBuilder(10);
@@ -185,7 +186,7 @@ public class UserServiceImpl implements UserService {
 
             helper.setText(emailBody, false);
 
-            // Set the sender of the email
+            // Set the sender of the email.
             helper.setFrom(mailSenderAddress);
 
             // Send the email.
