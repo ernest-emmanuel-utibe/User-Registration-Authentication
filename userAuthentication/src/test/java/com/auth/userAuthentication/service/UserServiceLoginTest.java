@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 import static org.junit.Assert.assertEquals;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceLoginTest {
@@ -23,13 +23,12 @@ public class UserServiceLoginTest {
 
     @Test
     public void testLogin_SuccessfulLogin() {
+        
         // Test successful user login
-        String usernameOrEmail = "john_doe";
+        String usernameOrEmail = "nathan_baron";
         String password = "testPassword";
         String hashedPassword = userService.hashPassword(password);
-
-        User user = new User(usernameOrEmail, "john.doe@example.com", hashedPassword);
-
+        User user = new User(usernameOrEmail, "nathan.baron@natgeoa.com", hashedPassword);
         when(userRepository.findByUsername(usernameOrEmail)).thenReturn(user);
         when(userRepository.findByEmail(usernameOrEmail)).thenReturn(null);
 
@@ -41,12 +40,13 @@ public class UserServiceLoginTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testLogin_InvalidPassword() {
+        
         // Test login with an invalid password
-        String usernameOrEmail = "john_doe";
+        String usernameOrEmail = "nathan_baron";
         String password = "testPassword";
         String hashedPassword = userService.hashPassword("wrongPassword");
 
-        User user = new User(usernameOrEmail, "john.doe@example.com", hashedPassword);
+        User user = new User(usernameOrEmail, "nathan.baron@natgeoa.com", hashedPassword);
 
         when(userRepository.findByUsername(usernameOrEmail)).thenReturn(user);
 
@@ -55,6 +55,7 @@ public class UserServiceLoginTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testLogin_UserNotFound() {
+        
         // Test login with a non-existing username/email
         String usernameOrEmail = "non_existing_user";
         String password = "testPassword";
