@@ -4,7 +4,6 @@ import com.auth.userAuthentication.data.model.SecurityDetail;
 import com.auth.userAuthentication.data.repository.SecurityDetailRepository;
 import com.auth.userAuthentication.service.SecurityDetailService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
